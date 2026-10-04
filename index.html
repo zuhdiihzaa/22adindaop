@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Level Up 22 — Adinda</title>
+  <meta name="description" content="Level Up 22 — birthday opening page for Adinda.">
+  <style>
+    :root{
+      --bg:#100b18;
+      --pink:#ff72b6;
+      --pink2:#ffb7dc;
+      --purple:#9c78ff;
+      --cream:#fff8fc;
+      --muted:#d9cddd;
+      --panel:rgba(255,255,255,.075);
+      --line:rgba(255,255,255,.14);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--bg);color:white;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{overflow-x:hidden}
+    button,a{font:inherit}
+    .page{
+      min-height:100svh;
+      position:relative;
+      isolation:isolate;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 72% 15%, rgba(255,114,182,.18), transparent 28%),
+        radial-gradient(circle at 18% 88%, rgba(156,120,255,.18), transparent 30%),
+        linear-gradient(145deg,#0d0913 0%,#171020 48%,#100a17 100%);
+    }
+    .noise{
+      position:absolute;inset:0;opacity:.055;pointer-events:none;z-index:5;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+    }
+    .orb{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}
+    .orb.one{width:420px;height:420px;background:rgba(255,83,166,.08);right:-160px;top:-120px}
+    .orb.two{width:340px;height:340px;background:rgba(130,103,255,.08);left:-160px;bottom:-130px}
+    .sparkles{position:absolute;inset:0;pointer-events:none;z-index:1}
+    .sparkles i{
+      position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;
+      box-shadow:0 0 14px 3px rgba(255,255,255,.65);
+      animation:float 4s ease-in-out infinite;
+    }
+    .sparkles i:nth-child(1){left:8%;top:19%;animation-delay:.2s}
+    .sparkles i:nth-child(2){left:48%;top:9%;width:3px;height:3px;animation-delay:1.1s}
+    .sparkles i:nth-child(3){right:12%;top:29%;width:3px;height:3px;animation-delay:2s}
+    .sparkles i:nth-child(4){right:26%;bottom:18%;animation-delay:.7s}
+    .sparkles i:nth-child(5){left:13%;bottom:29%;width:3px;height:3px;animation-delay:1.8s}
+    @keyframes float{50%{transform:translateY(-9px) scale(1.35);opacity:.55}}
+
+    .wrap{
+      position:relative;z-index:3;
+      min-height:100svh;
+      width:min(1180px,100%);
+      margin:auto;
+      padding:clamp(22px,4vw,54px);
+      display:grid;
+      grid-template-columns:minmax(330px, .92fr) minmax(360px, 1.08fr);
+      gap:clamp(30px,6vw,90px);
+      align-items:center;
+    }
+
+    .copy{padding:12px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:8px 12px;border:1px solid var(--line);
+      background:rgba(255,255,255,.055);
+      border-radius:999px;color:var(--pink2);
+      font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+      backdrop-filter:blur(12px);
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink)}
+    h1{
+      margin:18px 0 4px;
+      font-size:clamp(58px,9vw,118px);
+      line-height:.82;
+      letter-spacing:-.075em;
+      font-weight:950;
+    }
+    h1 span{
+      display:block;
+      background:linear-gradient(105deg,#fff 5%,#ffc3e2 48%,#a992ff 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .subtitle{
+      margin:18px 0 0;
+      color:var(--muted);
+      font-size:clamp(15px,1.55vw,19px);
+      line-height:1.65;
+      max-width:580px;
+    }
+    .subtitle b{color:#fff}
+    .message{
+      margin-top:24px;
+      padding:18px 19px;
+      max-width:600px;
+      border-left:2px solid var(--pink);
+      background:linear-gradient(90deg,rgba(255,114,182,.09),transparent);
+      color:#f5eaf2;
+      font-size:14px;
+      line-height:1.75;
+    }
+    .stats{
+      display:flex;flex-wrap:wrap;gap:9px;margin-top:22px
+    }
+    .stat{
+      padding:9px 12px;border:1px solid var(--line);border-radius:10px;
+      background:rgba(255,255,255,.045);font-size:11px;letter-spacing:.07em;
+      color:#e6dbe5;text-transform:uppercase
+    }
+    .stat strong{color:white;margin-left:5px}
+
+    .actions{display:flex;align-items:center;gap:14px;margin-top:26px;flex-wrap:wrap}
+    .start{
+      position:relative;display:inline-flex;align-items:center;justify-content:center;gap:11px;
+      min-width:205px;padding:15px 22px;border-radius:14px;
+      color:#180c15;text-decoration:none;font-weight:950;letter-spacing:.05em;
+      background:linear-gradient(135deg,#ffd0e7,#ff70b6);
+      box-shadow:0 10px 38px rgba(255,91,171,.28), inset 0 1px rgba(255,255,255,.65);
+      transition:.22s ease;
+      overflow:hidden;
+    }
+    .start:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.7) 48%,transparent 75%);transform:translateX(-120%);transition:.6s}
+    .start:hover{transform:translateY(-3px);box-shadow:0 15px 45px rgba(255,91,171,.36)}
+    .start:hover:before{transform:translateX(120%)}
+    .hint{font-size:11px;color:#b9aebb;letter-spacing:.08em;text-transform:uppercase}
+
+    .visual{
+      position:relative;min-height:590px;display:flex;align-items:center;justify-content:center;
+    }
+    .photo-main{
+      position:relative;width:min(430px,72vw);height:min(610px,78vh);
+      min-height:470px;border-radius:28px;overflow:hidden;
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:0 35px 90px rgba(0,0,0,.48),0 0 0 10px rgba(255,255,255,.025);
+      transform:rotate(2.2deg);
+      background:#211923;
+    }
+    .photo-main img{width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block;filter:saturate(1.02) contrast(1.01)}
+    .photo-main:after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(8,5,11,.72),transparent 38%,rgba(255,255,255,.04));
+      pointer-events:none;
+    }
+    .photo-tag{
+      position:absolute;z-index:2;left:18px;bottom:18px;
+      padding:11px 13px;border-radius:12px;
+      background:rgba(15,10,20,.68);border:1px solid rgba(255,255,255,.15);
+      backdrop-filter:blur(14px);
+      font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase
+    }
+    .photo-tag span{display:block;color:var(--pink2);font-size:9px;margin-bottom:3px}
+    .mini-photo{
+      position:absolute;z-index:4;right:-5px;bottom:34px;
+      width:160px;height:210px;border-radius:18px;overflow:hidden;
+      border:7px solid rgba(255,248,252,.96);
+      box-shadow:0 22px 45px rgba(0,0,0,.4);
+      transform:rotate(-7deg);
+      background:#fff;
+    }
+    .mini-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .level-badge{
+      position:absolute;z-index:5;left:-22px;top:72px;
+      width:112px;height:112px;border-radius:50%;
+      display:grid;place-items:center;text-align:center;
+      background:rgba(21,14,29,.86);border:1px solid rgba(255,183,220,.35);
+      box-shadow:0 15px 40px rgba(0,0,0,.3),0 0 40px rgba(255,114,182,.14);
+      backdrop-filter:blur(16px);
+    }
+    .level-badge small{display:block;color:#cbbbc9;font-size:8px;letter-spacing:.18em;font-weight:800}
+    .level-badge strong{display:block;font-size:36px;line-height:.9;color:#fff}
+    .level-badge em{font-style:normal;color:var(--pink2);font-size:8px;letter-spacing:.13em;font-weight:900}
+
+    .footer{
+      position:absolute;z-index:4;left:clamp(22px,4vw,54px);right:clamp(22px,4vw,54px);bottom:18px;
+      display:flex;justify-content:space-between;gap:20px;
+      color:#8f8490;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    }
+
+    @media(max-width:850px){
+      .page{min-height:auto}
+      .wrap{grid-template-columns:1fr;padding:30px 22px 74px;gap:22px}
+      .copy{padding-top:10px}
+      h1{font-size:clamp(62px,19vw,100px)}
+      .subtitle{font-size:14px}
+      .visual{min-height:520px}
+      .photo-main{width:min(390px,82vw);height:520px}
+      .mini-photo{right:5%;width:125px;height:165px}
+      .level-badge{left:3%;top:55px;width:96px;height:96px}
+      .level-badge strong{font-size:31px}
+      .footer{bottom:14px}
+    }
+    @media(max-width:520px){
+      .wrap{padding:24px 17px 72px}
+      .eyebrow{font-size:9px}
+      h1{margin-top:15px}
+      .message{font-size:13px;line-height:1.68;padding:15px}
+      .actions{margin-top:20px}
+      .start{width:100%;min-width:0}
+      .hint{width:100%;text-align:center}
+      .visual{min-height:475px}
+      .photo-main{width:82vw;height:475px;min-height:0;border-radius:23px}
+      .mini-photo{width:110px;height:145px;right:1%;bottom:28px;border-width:5px}
+      .level-badge{left:0;top:35px;width:86px;height:86px}
+      .level-badge strong{font-size:28px}
+      .footer{font-size:7px;letter-spacing:.1em}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="noise"></div>
+    <div class="orb one"></div><div class="orb two"></div>
+    <div class="sparkles"><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="wrap">
+      <section class="copy">
+        <div class="eyebrow"><span class="dot"></span> birthday quest unlocked</div>
+
+        <h1>
+          <span>LEVEL UP</span>
+          <span>22</span>
+        </h1>
+
+        <p class="subtitle">
+          <b>Happy birthday, Dinda! ♡</b><br>
+          Gak kerasa ya, sekarang udah masuk level 22.
+        </p>
+
+        <div class="message">
+          Di level baru ini, semoga makin banyak hal baik yang datang ke kamu.
+          Jangan lupa bahagia, jangan terlalu capek, dan kalau lagi ngerasa berat,
+          inget aja... kamu gak harus ngelewatin semuanya sendirian.
+          <br><br>
+          Udah, daripada aku kebanyakan ngomong, mending kita mulai gamenya.
+          Ada sesuatu yang udah aku siapin buat kamu. ♡
+        </div>
+
+        <div class="stats">
+          <div class="stat">PLAYER <strong>ADINDA</strong></div>
+          <div class="stat">LEVEL <strong>22</strong></div>
+          <div class="stat">QUEST <strong>BIRTHDAY</strong></div>
+        </div>
+
+        <div class="actions">
+          <a class="start" href="https://zuhdiihzaa.github.io/22ndadinda/" aria-label="Start game">
+            START GAME <span>▶</span>
+          </a>
+          <div class="hint">press start & begin the quest</div>
+        </div>
+      </section>
+
+      <section class="visual" aria-label="Foto Dinda">
+        <div class="level-badge">
+          <div><small>NEW</small><strong>22</strong><em>LEVEL</em></div>
+        </div>
+
+        <figure class="photo-main">
+          <img src="assets/dinda-01.jpg" alt="Dinda">
+          <div class="photo-tag"><span>PLAYER PROFILE</span>ADINDA OKTAFIANI</div>
+        </figure>
+
+        <figure class="mini-photo">
+          <img src="assets/dinda-02.jpg" alt="Dinda">
+        </figure>
+      </section>
+    </div>
+
+    <div class="footer">
+      <span>LEVEL UP TO 22</span>
+      <span>♡ MADE FOR DINDA</span>
+    </div>
+  </main>
+</body>
+</html>
